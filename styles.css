@@ -1,0 +1,174 @@
+:root {
+  --fb-blue: #1877f2;
+  --fb-green: #42b72a;
+  --bg: #f0f2f5;
+  --text: #1c1e21;
+  --muted: #606770;
+  --line: #dadde1;
+  --card-shadow: 0 14px 34px rgba(17, 24, 39, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 500px at 15% -10%, #dbe8ff 0%, transparent 60%),
+    linear-gradient(180deg, #f7f9fc 0%, var(--bg) 100%);
+}
+
+.auth-page {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  align-items: center;
+  gap: 34px;
+  padding: 24px;
+}
+
+.brand-zone h1 {
+  margin: 0;
+  font-size: clamp(42px, 6.5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  color: var(--fb-blue);
+  font-weight: 800;
+}
+
+.brand-zone p {
+  margin: 14px 0 0;
+  max-width: 460px;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.2;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.login-card {
+  background: #fff;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+}
+
+.login-card input:focus {
+  outline: 0;
+  border-color: var(--fb-blue);
+  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.18);
+}
+
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-login {
+  background: var(--fb-blue);
+  color: #fff;
+  font-size: 20px;
+}
+
+.btn-login:hover {
+  filter: brightness(0.96);
+}
+
+.forgot {
+  text-align: center;
+  color: var(--fb-blue);
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  border-top: 1px solid var(--line);
+  margin: 8px 0;
+}
+
+.btn-create {
+  width: fit-content;
+  align-self: center;
+  background: var(--fb-green);
+  color: #fff;
+  padding-inline: 18px;
+}
+
+.btn-create:hover {
+  filter: brightness(0.96);
+}
+
+.create-page {
+  text-align: center;
+  margin: 26px 0 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.create-page strong {
+  font-weight: 800;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    padding-top: 56px;
+  }
+
+  .brand-zone {
+    text-align: center;
+  }
+
+  .brand-zone p {
+    margin-inline: auto;
+    max-width: 560px;
+    font-size: clamp(18px, 2.8vw, 25px);
+  }
+
+  .login-zone {
+    width: min(420px, 100%);
+  }
+}
